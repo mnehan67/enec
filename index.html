@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PolypClean Pathway — Interactive 3D System</title>
+  <meta name="description" content="Interactive 3D concept viewer for the PolypClean self-cleaning inlet mesh and underwater robot." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">PC</span><span>PolypClean Pathway</span></a>
+    <nav>
+      <a href="#system">System</a>
+      <a href="#mesh">Mesh</a>
+      <a href="#robot">Robot</a>
+      <a href="#workflow">Workflow</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-copy">
+        <span class="eyebrow">ENEC STUDENT CHALLENGE · POST-EARLY-WARNING MANAGEMENT</span>
+        <h1>Block the inlet.<br/>Clean the channel.<br/><em>Protect the intake.</em></h1>
+        <p>A two-layer marine system based directly on the original proposal: a self-cleaning inlet mesh for adult jellyfish and an underwater robot for channel-wall inspection and polyp removal.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#mesh">Explore the 3D models</a>
+          <a class="btn ghost" href="#system">See system pathway</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div><b>01</b><span>Inlet barrier</span></div>
+        <div><b>02</b><span>Channel robot</span></div>
+        <div><b>04</b><span>Robot mission steps</span></div>
+      </div>
+    </section>
+
+    <section id="system" class="section system-section">
+      <div class="section-head">
+        <span class="kicker">SYSTEM ARCHITECTURE</span>
+        <h2>Sea → inlet mesh → channel robot → forebay → plant</h2>
+        <p>This keeps the concept inside the marine-side pathway described in the deck. Existing plant screens remain the final protection layer.</p>
+      </div>
+      <div class="pathway">
+        <div class="path-node"><span>01</span><b>Arabian Gulf</b><small>Seasonal adult jellyfish</small></div>
+        <div class="path-arrow">→</div>
+        <div class="path-node active"><span>02</span><b>Self-cleaning mesh</b><small>Adult exclusion at inlet</small></div>
+        <div class="path-arrow">→</div>
+        <div class="path-node active"><span>03</span><b>Intake channel</b><small>Robot patrols hard surfaces</small></div>
+        <div class="path-arrow">→</div>
+        <div class="path-node"><span>04</span><b>Forebay</b><small>Cooling basin</small></div>
+        <div class="path-arrow">→</div>
+        <div class="path-node"><span>05</span><b>Plant screens</b><small>Residual load only</small></div>
+      </div>
+      <div class="site-strip">
+        <img src="assets/site_key.jpg" alt="Barakah facility key visual from the original deck" />
+        <div>
+          <span class="kicker">SITE MAPPING</span>
+          <h3>Designed around a defined coastal intake pathway</h3>
+          <p>The original deck maps the intervention to the breakwater mouth, intake channel and forebay rather than redesigning nuclear systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mesh" class="section model-section">
+      <div class="section-head compact">
+        <span class="kicker">LAYER 1 · 3D MODEL</span>
+        <h2>Self-cleaning inlet mesh</h2>
+        <p>A perforated moving belt loops between two rotating pillars. A fixed scraper cleans the belt on every pass; identical modules can be ganged side-by-side across the inlet.</p>
+      </div>
+      <div class="model-grid">
+        <div class="viewer-card">
+          <div class="viewer-toolbar">
+            <div class="status"><span class="dot"></span> Interactive model</div>
+            <div class="toolbar-actions">
+              <button data-action="mesh-rotate">Pause rotation</button>
+              <button data-action="mesh-explode">Explode view</button>
+              <button data-action="mesh-modules">Show 3 modules</button>
+              <button data-action="mesh-reset">Reset</button>
+            </div>
+          </div>
+          <div id="meshViewer" class="viewer"></div>
+          <div class="viewer-help">Drag to rotate · Scroll to zoom · Right-drag to pan</div>
+        </div>
+        <aside class="model-notes">
+          <div class="reference-card">
+            <img src="assets/mesh_cad.png" alt="Original mesh CAD concept from the slides" />
+            <span>Original deck reference</span>
+          </div>
+          <button class="part-card" data-model="mesh" data-part="belt"><span>01</span><div><b>Continuous perforated belt</b><small>Loops between the two drums so no section remains static for long periods.</small></div></button>
+          <button class="part-card" data-model="mesh" data-part="drums"><span>02</span><div><b>Rotating pillars / drums</b><small>Drive and guide the belt continuously.</small></div></button>
+          <button class="part-card" data-model="mesh" data-part="scraper"><span>03</span><div><b>Fixed scraper plate</b><small>Mechanically removes attached residue each time the belt passes the cleaning point.</small></div></button>
+          <button class="part-card" data-model="mesh" data-part="beacon"><span>04</span><div><b>Surface marker / beacon</b><small>Makes each modular section identifiable for inspection and maintenance.</small></div></button>
+          <div class="design-note"><b>Design intent</b><p>Exclude adult jellyfish while maintaining through-flow and preventing the barrier itself from becoming a permanent fouling surface.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="robot" class="section model-section alt">
+      <div class="section-head compact">
+        <span class="kicker">LAYER 2 · 3D MODEL</span>
+        <h2>PolypClean underwater robot</h2>
+        <p>The robot patrols channel walls, rocks and concrete using camera + lighting for inspection, sonar for navigation, thrusters for precise positioning, a robotic arm for removal, and suction for collection.</p>
+      </div>
+      <div class="model-grid reverse">
+        <aside class="model-notes robot-notes">
+          <div class="reference-card tall">
+            <img src="assets/robot_poster.jpg" alt="Original PolypClean robot poster" />
+            <span>Original deck reference</span>
+          </div>
+          <div class="part-list">
+            <button class="part-chip" data-model="robot" data-part="camera">AI camera + LEDs</button>
+            <button class="part-chip" data-model="robot" data-part="sonar">Sonar + navigation</button>
+            <button class="part-chip" data-model="robot" data-part="thrusters">Thrusters</button>
+            <button class="part-chip" data-model="robot" data-part="arm">Robotic arm</button>
+            <button class="part-chip" data-model="robot" data-part="suction">Suction / collection</button>
+          </div>
+          <div class="design-note"><b>Operating mode</b><p>Supervised autonomy: the robot follows a mapped route, detects candidate colonies, approaches and removes them, then logs the cleaned location. Human override remains available.</p></div>
+        </aside>
+        <div class="viewer-card">
+          <div class="viewer-toolbar">
+            <div class="status"><span class="dot"></span> Interactive model</div>
+            <div class="toolbar-actions">
+              <button data-action="robot-rotate">Pause rotation</button>
+              <button data-action="robot-arm">Move arm</button>
+              <button data-action="robot-lights">Toggle lights</button>
+              <button data-action="robot-reset">Reset</button>
+            </div>
+          </div>
+          <div id="robotViewer" class="viewer"></div>
+          <div class="viewer-help">Click a subsystem label to highlight it · Drag to orbit</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="section workflow-section">
+      <div class="section-head">
+        <span class="kicker">ROBOT MISSION LOOP</span>
+        <h2>Detect → remove → collect → continue</h2>
+        <p>The website keeps the mission sequence exactly aligned with the original robot concept while adding the missing operational detail.</p>
+      </div>
+      <div class="workflow-grid">
+        <article><span>01</span><h3>Detect</h3><p>Scan the wall with camera + LEDs. Computer vision flags candidate polyp colonies.</p></article>
+        <article><span>02</span><h3>Remove</h3><p>Stabilise near the surface and place a gentle scraper or micro-cutter on the target.</p></article>
+        <article><span>03</span><h3>Collect</h3><p>Suction captures detached material so it is not simply released downstream.</p></article>
+        <article><span>04</span><h3>Continue</h3><p>Verify the cleaned area, log its location, and continue along the mapped channel.</p></article>
+      </div>
+    </section>
+
+    <section class="section assumptions">
+      <div class="section-head compact">
+        <span class="kicker">WHAT IS ASSUMED</span>
+        <h2>Concept model, not plant-design data</h2>
+      </div>
+      <div class="assumption-grid">
+        <div><b>Mesh geometry</b><p>The 3D model visualises the rotating-belt concept from the slides; final dimensions, aperture and hydraulic loading require site-specific engineering.</p></div>
+        <div><b>Robot morphology</b><p>The 3D robot is a functional concept model based on the hardware callouts in the slide poster, not a final pressure-rated manufacturing design.</p></div>
+        <div><b>Polyp occurrence</b><p>Hard-surface inspection is part of the proposed maintenance pathway; local polyp presence and density would need site characterisation.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>PolypClean Pathway</b><span>Interactive concept website</span></div>
+    <span>Mesh and robot geometry are digital concept models derived from the supplied proposal slides.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
